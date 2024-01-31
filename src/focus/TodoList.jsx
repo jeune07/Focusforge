@@ -1,13 +1,18 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const TodoList = () => {
-  return (
-    <div>
-      <ul className="list-group">
-        <TodoItem />
+const TodoList = ({todos=[]}) => {
+  return (    
+      <ul className="list-group"> 
+      {
+        todos.map(todo=>(
+           <TodoItem todo={todo} key={todo.id}/>
+        ))
+       
+      }
+        
       </ul>
-    </div>
+    
   );
 };
 

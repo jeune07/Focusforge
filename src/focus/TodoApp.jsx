@@ -34,7 +34,18 @@ const TodoApp = () => {
     }
   ]
 
-  const [state, dispatch] = useReducer(todoReducer, inicialState)
+  const [todos, dispatch] = useReducer(todoReducer, inicialState)
+
+  const  handlerNewTodo=(todo)=> {
+
+    const action ={
+      type : '[TODO] Add Todo',
+      payload:todo
+    }
+
+    dispatch(action)
+
+  }
   
   return (
     <div>
@@ -42,13 +53,13 @@ const TodoApp = () => {
      <hr />
      <div className="row">
       <div className="col-7">
-      <TodoList/>                      
+      <TodoList todos={todos}/>                      
       </div>
       <div className="col-5">
         <h3>  Add to do</h3>
         <hr />
-        <AddTodo />        
-        <button type="submit" className='btn btn-outline-primary mt-1'> add</button>
+        <AddTodo handlerNewTodo={handlerNewTodo}/>        
+        
       </div>
      </div>
      
