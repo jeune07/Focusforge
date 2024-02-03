@@ -25,6 +25,7 @@ const AddTodo = ({handlerNewTodo}) => {
       }
 
       handlerNewTodo(newTodo);
+      onResetForm();
 
     }
 
