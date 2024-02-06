@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react'
 import FormCustumHook from '../formCustumHook/formCustumHook'
-import { todoReducer } from './TodoReducer'
+import { todoReducer } from './todoReducer'
 import TodoList from './TodoList'
 import AddTodo from './AddTodo'
 
@@ -62,15 +62,25 @@ const TodoApp = () => {
     dispatch(action)
   }
 
+  const ontoggleTodo =(id)=> {
+    const action ={
+      type : '[TODO] ontoggle Todo',
+      payload:id
+    }
+    dispatch(action)
+
+  }
+
+
 
   
   return (
     <div>
-     <h1>TodoApp : 10 <small>Pendendientes: 2</small></h1>
+     <h1>Total task : {todos.length} <small>Pending Task: {todos.filter(todo=> !todo.done).length}</small></h1>
      <hr />
      <div className="row">
       <div className="col-7">
-      <TodoList todos={todos} handlerDeleteTodo ={handlerDeleteTodo}/>                      
+      <TodoList todos={todos} handlerDeleteTodo ={handlerDeleteTodo} ontoggleTodo={ontoggleTodo}/>                      
       </div>
       <div className="col-5">
         <h3>  Add to do</h3>
