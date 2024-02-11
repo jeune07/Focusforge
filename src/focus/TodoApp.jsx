@@ -13,25 +13,8 @@ const TodoApp = () => {
       todo: "Porte Folio website",
       done: false,
       
-    },
-    {
-      id:2 ,
-      todo: "Vuduluxe website",
-      done: false,
-      
-    },
-    {
-      id:3 ,
-      todo: "True story  Blog",
-      done: false,
-      
-    },
-    {
-      id:4 ,
-      todo: "EcoCleanExpress.com",
-      done: false,
-      
     }
+   
   ]
 
   const init=()=> {
@@ -76,7 +59,7 @@ const TodoApp = () => {
   
   return (
     <div>
-     <h1>Total task : {todos.length} <small>Pending Task: {todos.filter(todo=> !todo.done).length}</small></h1>
+     <h1>Total task : {todos.length} <small>Pending Task: {todos.filter(todo=> !todo.done).length }</small></h1>
      <hr />
      <div className="row">
       <div className="col-7">
